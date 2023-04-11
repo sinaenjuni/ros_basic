@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="topic_practice" type="serial_sender.py" name="serial_sender_node" />
+    <node pkg="topic_practice" type="serial_receiver.py" name="receiver_sender_node" output="screen"/>
+</launch>

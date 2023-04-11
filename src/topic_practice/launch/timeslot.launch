@@ -1,0 +1,7 @@
+<launch>
+    <!-- <node pkg="topic_practice" type="timeslot_sender.py" name="timeslot_sender_node" output="screen"/> -->
+    <node pkg="topic_practice" type="timeslot_receiver.py" name="timeslot_receiver_node" output="screen"/>
+    <node pkg="topic_practice" type="timeslot_receiver.py" name="timeslot_receiver_node_1" output="screen"/>
+    <node pkg="topic_practice" type="timeslot_receiver.py" name="timeslot_receiver_node_2" output="screen"/>
+    <node pkg="topic_practice" type="timeslot_receiver.py" name="timeslot_receiver_node_3" output="screen"/>
+</launch>

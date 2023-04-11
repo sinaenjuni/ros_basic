@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="topic_practice" type="speed_sender.py" name="speed_sender_node" output="screen"/>
+    <node pkg="topic_practice" type="speed_receiver.py" name="speed_receiver_node" output="screen"/>
+</launch>
