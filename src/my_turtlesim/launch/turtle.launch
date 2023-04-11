@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node" />
+    <node pkg="my_turtlesim" type="turtle_drive.py" name="turtlesim_dvive_node" />
+</launch>
