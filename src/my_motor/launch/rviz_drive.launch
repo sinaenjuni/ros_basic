@@ -1,0 +1,19 @@
+<!--rviz_drive.launch-->
+<launch>
+    <!-- <param name="robot_description" textfile="$(find rviz_xycar)/urdf/xycar_3d.urdf"/>
+    <param name="use_gui" value="true"/> -->
+
+    <!-- rviz display -->
+    <!-- <node name="rviz_visualizer" pkg="rviz" type="rviz" required="true" 
+                args="-d $(find rviz_xycar)/rviz/rviz_drive.rviz"/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" 
+                type="state_publisher"/> -->
+
+    <include file="$(find my_model)/launch/model.launch"/>
+
+    <node name="driver" pkg="my_motor" type="8_drive.py" /> 
+    <node name="converter" pkg="my_motor" type="converter.py" />
+    <node name="odom" pkg="my_motor" type="odom.py" />
+
+</launch>
