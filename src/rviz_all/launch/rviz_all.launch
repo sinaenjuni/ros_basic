@@ -1,0 +1,20 @@
+<launch>
+    <param name="robot_description" textfile="$(find rviz_all)/urdf/rviz_all.urdf"/>
+    <param name="use_gui" value="true" />
+    <node name="rviz_visualizer" pkg="rviz" type="rviz" required="true" 
+          args="-d $(find rviz_all)/rviz/rviz_all.rviz"/>
+    
+    <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+    
+    <node name="driver" pkg="rviz_all" type="8_drive.py"/>
+    <node name="motor" pkg="rviz_all" type="converter.py"/>
+    <node name="odometry" pkg="rviz_all" type="odom_imu.py"/>
+    
+    <node name="rosbag_play" pkg="rosbag" type="play" required="true"
+     args="$(find rviz_lidar)/src/lidar_topic.bag" />
+    <node name="lidar" pkg="rviz_lidar" type="rviz_range.py" output="screen"/>
+    <!-- <node name="lidar_fid" pkg="rviz_lidar" type="change_fid.py"/> -->
+
+    <node name="imu" pkg="rviz_imu" type="imu_generator.py"/>
+</launch>
